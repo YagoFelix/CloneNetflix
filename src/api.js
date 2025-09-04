@@ -1,45 +1,47 @@
-const API_KEY = "b4ed4f185d2779a6e997d3b84da6240f"
+const API_KEY = "b4ed4f185d2779a6e997d3b84da6240f";
 
 const categories = [
     {
         name: "trending",
         title: "Em alta",
-        path: `/trending/all/week?api_key${API_KEY}&language=pt-br`,
+        path: `/trending/all/week?api_key=${API_KEY}&language=pt-br`,
     },
     {
         name: "netflixOriginals",
         title: "Originais Netflix",
-        path: `/discover/tv?api_key${API_KEY}&with_networks=213`,
+        path: `/discover/tv?api_key=${API_KEY}&with_networks=213`,
     },
     {
         name: "topRated",
         title: "Populares",
-        path: `/movie/top_rated?api_key${API_KEY}&language=pt-br`,
+        path: `/movie/top_rated?api_key=${API_KEY}&language=pt-br`,
     },
     {
         name: "comedy",
         title: "Comédias",
-        path: `/discover/tv?api_key${API_KEY}&with_genres=35`,
+        path: `/discover/tv?api_key=${API_KEY}&with_genres=35`,
     },
     {
         name: "romances",
         title: "Romances",
-        path: `/discover/tv?api_key${API_KEY}&with_genres=1074`,
+        path: `/discover/tv?api_key=${API_KEY}&with_genres=10749`,
     },
     {
         name: "documentaries",
         title: "Documentários",
-        path: `/discover/tvk?api_key${API_KEY}&with_genres=99`,
+        path: `/discover/tv?api_key=${API_KEY}&with_genres=99`,
     },
 
 ];
 
 export const getMovies = async (path) => {
     try {
-        let url = `https://api.themoviedb.org/3/${path}`;
+        let url = `https://api.themoviedb.org/3${path}`;
         const response = await fetch(url);
-        return await response.ponse.json();
+        return await response.json();
     } catch (error) {
         console.log("error getMovies: ", error);
     }
-}
+};
+
+export default categories;
