@@ -1,0 +1,26 @@
+.row-container {
+    margin-left: 20px;
+}
+
+.row-cards {
+    display: flex;
+    overflow-y: hidden; /*esconde o scroll do eixo x*/
+    overflow-x: scroll; /*mantém o scroll no eixo y*/
+    padding: 20px;
+}
+
+.row-cards::-webkit-scrollbar {
+    display: none;
+}
+
+.movie-card {
+    width: 100%;
+    max-height: 100px;
+    margin-bottom: 10px;
+    transition: transform 450ms;
+}
+
+.movie-card:hover {
+    transform: scale(1.08);
+}
+
